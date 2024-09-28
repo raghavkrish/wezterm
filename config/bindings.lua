@@ -160,6 +160,13 @@ local keys = {
          timemout_miliseconds = 1000,
       }),
    },
+
+   -- clear scrollback
+   {
+      key = 'k',
+      mods = 'SUPER',
+      action = act.ClearScrollback 'ScrollbackAndViewport'
+   }
 }
 
 -- stylua: ignore
