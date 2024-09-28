@@ -165,7 +165,10 @@ local keys = {
    {
       key = 'k',
       mods = 'SUPER',
-      action = act.ClearScrollback 'ScrollbackAndViewport'
+      action = act.Multiple {
+         act.ClearScrollback 'ScrollbackAndViewport',
+         act.SendKey { key = 'L', mods = 'CTRL' },
+      },
    }
 }
 
