@@ -139,6 +139,12 @@ local keys = {
       action = act.PaneSelect({ alphabet = '1234567890', mode = 'SwapWithActiveKeepFocus' }),
    },
 
+   {
+     key = 'r',
+     mods = 'CMD|SHIFT',
+     action = wezterm.action.ReloadConfiguration,
+   },
+
    -- key-tables --
    -- resizes fonts
    {
