@@ -32,12 +32,14 @@ return {
    -- tab bar
    enable_tab_bar = true,
    hide_tab_bar_if_only_one_tab = false,
-   use_fancy_tab_bar = false,
+   use_fancy_tab_bar = true,
    tab_max_width = 25,
    show_tab_index_in_tab_bar = false,
    switch_to_last_active_tab_when_closing_tab = true,
 
    -- window
+   window_decorations = "RESIZE",
+   integrated_title_buttons = {},
    window_padding = {
       left = 5,
       right = 10,
