@@ -3,6 +3,7 @@ local gpu_adapters = require('utils.gpu_adapter')
 local colors = require('colors.custom')
 
 return {
+   macos_window_background_blur = 10,
    animation_fps = 60,
    max_fps = 60,
    front_end = 'WebGpu',
@@ -14,15 +15,15 @@ return {
 
    -- background
    background = {
-      {
-         source = { File = wezterm.GLOBAL.background },
-         horizontal_align = 'Center',
-      },
+      -- {
+      --    source = { File = wezterm.GLOBAL.background },
+      --    horizontal_align = 'Center',
+      -- },
       {
          source = { Color = colors.background },
          height = '100%',
          width = '100%',
-         opacity = 0.9,
+         opacity = 0.6,
       },
    },
 

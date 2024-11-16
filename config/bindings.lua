@@ -1,6 +1,6 @@
 local wezterm = require('wezterm')
 local platform = require('utils.platform')()
-local backdrops = require('utils.backdrops')
+-- local backdrops = require('utils.backdrops')
 local act = wezterm.action
 
 local mod = {}
@@ -15,6 +15,15 @@ end
 
 -- stylua: ignore
 local keys = {
+
+  --  {
+  --   key = 'h',  -- You can change this to any key you prefer
+  --   mods = 'SUPER|SHIFT',  -- You can modify these modifiers (CTRL, ALT, SHIFT, SUPER)
+  --   action = wezterm.action.SpawnCommand {
+  --     args = { '/Users/raghav/code/dev-setup/custom-commands/cht.sh' },
+  --   },
+  -- },
+
    -- misc/useful --
    { key = 'F1', mods = 'NONE', action = 'ActivateCopyMode' },
    { key = 'F2', mods = 'NONE', action = act.ActivateCommandPalette },
@@ -74,42 +83,42 @@ local keys = {
    { key = 'n',          mods = mod.SUPER,     action = act.SpawnWindow },
    { key = 'q',          mods = mod.SUPER,     action = act.QuitApplication },
 
-   -- background controls --
-   {
-      key = [[/]],
-      mods = mod.SUPER,
-      action = wezterm.action_callback(function(window, _pane)
-         backdrops:random(window)
-      end),
-   },
-   {
-      key = [[,]],
-      mods = mod.SUPER,
-      action = wezterm.action_callback(function(window, _pane)
-         backdrops:cycle_back(window)
-      end),
-   },
-   {
-      key = [[.]],
-      mods = mod.SUPER,
-      action = wezterm.action_callback(function(window, _pane)
-         backdrops:cycle_forward(window)
-      end),
-   },
-   {
-      key = [[/]],
-      mods = mod.SUPER_REV,
-      action = act.InputSelector({
-         title = 'Select Background',
-         choices = backdrops:choices(),
-         fuzzy = true,
-         fuzzy_description = 'Select Background: ',
-         action = wezterm.action_callback(function(window, _pane, idx)
-            ---@diagnostic disable-next-line: param-type-mismatch
-            backdrops:set_img(window, tonumber(idx))
-         end),
-      }),
-   },
+   -- -- background controls --
+   -- {
+   --    key = [[/]],
+   --    mods = mod.SUPER,
+   --    action = wezterm.action_callback(function(window, _pane)
+   --       backdrops:random(window)
+   --    end),
+   -- },
+   -- {
+   --    key = [[,]],
+   --    mods = mod.SUPER,
+   --    action = wezterm.action_callback(function(window, _pane)
+   --       backdrops:cycle_back(window)
+   --    end),
+   -- },
+   -- {
+   --    key = [[.]],
+   --    mods = mod.SUPER,
+   --    action = wezterm.action_callback(function(window, _pane)
+   --       backdrops:cycle_forward(window)
+   --    end),
+   -- },
+   -- {
+   --    key = [[/]],
+   --    mods = mod.SUPER_REV,
+   --    action = act.InputSelector({
+   --       title = 'Select Background',
+   --       choices = backdrops:choices(),
+   --       fuzzy = true,
+   --       fuzzy_description = 'Select Background: ',
+   --       action = wezterm.action_callback(function(window, _pane, idx)
+   --          ---@diagnostic disable-next-line: param-type-mismatch
+   --          backdrops:set_img(window, tonumber(idx))
+   --       end),
+   --    }),
+   -- },
 
    -- panes --
    -- panes: split panes
